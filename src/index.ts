@@ -131,3 +131,66 @@ stringArray.push('abc')
 // stringArray.push(5)
 // console.log(stringArray);
 
+
+
+// Class
+
+class Person2{
+    private id: number
+    name: string
+
+    constructor(id: number, name: string){
+        this.id = id
+        this.name = name
+    }
+
+    register(){
+        return `${this.name} is already register`
+    }
+}
+
+const xyz2 = new Person2(1, 'xyz2');
+const abc2 = new Person2(2, 'abc2');
+
+// xyz.id = 20;
+
+
+// Person Interface
+
+interface PersonInterface {
+    id: number
+    name: string
+    authentic(): string
+}
+
+class Person implements PersonInterface{
+    id: number
+    name: string
+
+    constructor(id: number, name: string){
+        this.id = id
+        this.name = name
+    }
+
+    authentic(): string {
+        return `${this.name} is authentic`
+    }
+}
+
+const abc = new Person(1, 'abc')
+// console.log(abc.authentic())
+
+
+class Employee extends Person{
+    position: string
+
+    constructor(id: number, name: string, position: string){
+        super(id, name)
+        this.position = position
+    }
+}
+
+
+const emp = new Employee(20, 'Alice', 'Backend');
+
+console.log(emp.authentic())

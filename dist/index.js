@@ -75,3 +75,34 @@ const stringArray = getArray(['one', 'two', 'three']);
 stringArray.push('abc');
 // stringArray.push(5)
 // console.log(stringArray);
+// Class
+class Person2 {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is already register`;
+    }
+}
+const xyz2 = new Person2(1, 'xyz2');
+const abc2 = new Person2(2, 'abc2');
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    authentic() {
+        return `${this.name} is authentic`;
+    }
+}
+const abc = new Person(1, 'abc');
+// console.log(abc.authentic())
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(20, 'Alice', 'Backend');
+console.log(emp.authentic());
